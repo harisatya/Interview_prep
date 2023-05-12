@@ -1,0 +1,53 @@
+1 --> git clone "project from git"; upstream
+2 --> git add upstream "from forked repo"; origin
+3 --> git status which shows which are the chnages files.
+4 --> git checkout -b "branchName";
+5 --> git add fileName or if we want to add all git add .
+6 --> git commit -m "Message".
+7 --> git push origin "branchName"
+8 --> after this we need to create PR with branch in gitUI.
+
+---------
+1--> git pull upsteam branchName
+2-->git merge upstream/PI9-dev for mergin upstream
+-------------
+1) make sure you are on pi8-dev branch
+2)git pull upstream develop
+3)git fetch upstream
+4)git checkout PI9-dev
+5) git merge upstream/PI9-dev
+6) add the same fix in this branch
+7) check on local if everything is fine
+8) create issue branch with some other name
+9) commit and push to PI9-dev
+10)create pull request(while sending pr please refer instructions provided by Erna
+git commit -m "Save with Existing Config ID for WCS_SO and WCS_USPS #3504" 
+---------------------------------------------------------------------------------------------
+npm run start:development
+---------------------------
+git status
+git checkout develop
+git pull upstream develop
+git checkout -b issue_number
+do the changes
+type message
+click on tick
+git push origin issue_number
+open github
+link user story
+comment
+----------------------------
+PS D:\HP_GitHub\one-config-admin> git config --global user.email "harisatya.chundru@hp.com"
+PS D:\HP_GitHub\one-config-admin> git config --global user.name "harisatya-chundru"
+---------------------
+Set UP
+Keeping Your Fork Up To Date
+You may have noticed something while watching the previous videos...Do you have to always fork the Open Source project every time master get's updated? What happens if somebody makes an update to the original project and now your forked project is out of sync and outdated? Luckily for you, there is an easy way to always make sure your fork has the most up to date version of the original project. Here is how:
+Type git remote -v and press Enter. You'll see the current configured remote repository for your fork.
+
+git remote -v
+origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
+origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+Type git remote add upstream, and then paste the URL you would copy from the original repository if you were to do a git clone. Press Enter. It will look like this:
+
+git remote add upstream https://github.com/zero-to-mastery/PROJECT_NAME.git
