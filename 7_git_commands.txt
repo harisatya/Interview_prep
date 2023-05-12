@@ -1,5 +1,5 @@
 1 --> git clone "project from git"; upstream
-2 --> git add upstream "from forked repo"; origin
+2 --> git remote add upstream  (git remote -v)"from forked repo"; origin
 3 --> git status which shows which are the chnages files.
 4 --> git checkout -b "branchName";
 5 --> git add fileName or if we want to add all git add .
