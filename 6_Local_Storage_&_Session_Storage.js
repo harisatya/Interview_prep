@@ -43,3 +43,8 @@ const actualUse = JSON.parse(userget);
 //same methods like localstorege
 
 sessionStorage.setItem("Key", "Value");
+
+//Cookies we dont use them very high unless we want to send data to server.
+// expiry will be set maually
+
+document.cookie = "name=Hari"
