@@ -37,8 +37,8 @@ open github
 link user story
 comment
 ----------------------------
-PS D:\HP_GitHub\one-config-admin> git config --global user.email "harisatya.chundru@hp.com"
-PS D:\HP_GitHub\one-config-admin> git config --global user.name "harisatya-chundru"
+PS D:\HP_GitHub\one-config-admin> git config --global user.email "chundruhari@gmail.com"
+PS D:\HP_GitHub\one-config-admin> git config --global user.name "harisatya"
 ---------------------
 Set UP
 Keeping Your Fork Up To Date
