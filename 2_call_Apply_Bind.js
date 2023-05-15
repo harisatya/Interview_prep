@@ -1,8 +1,9 @@
-// Call Apply Bind mehods
+// Call Apply Bind methods
 // Bind is also called explict binding.
 
 // Call() Method: The call method is basically used to invoke the function
 // with different this object. In JavaScript, this refers to an object.
+
 // It depends on how we are calling a particular function. In the global scope,
 // this refers to the global object window. Inside function also this refers to the global object window.
 
@@ -37,3 +38,4 @@ printUserObj.apply(user, [24, "Hyd"]);
 //object and returns a function which can be invoked later
 const printUser = printUserObj.bind(user, 25, "Karnataka");
 console.log(printUser);
+
