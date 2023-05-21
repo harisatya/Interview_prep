@@ -14,6 +14,7 @@ function* sampleGenerator(){
 const genobj = sampleGenerator();
 const obj = genobj.next();
  console.log(obj);
+//Output: { value: 1, done: false }
 
 
  // gen function we cna write infinite times with generators
