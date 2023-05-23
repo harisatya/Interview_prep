@@ -1,7 +1,9 @@
 // Currying
 
-// It is a technique in functional programming, transformation of the
-//function of multiple arguments into several functions of a single argument in sequence
+//Function currying in JavaScript is a technique that involves transforming a function 
+//with multiple arguments into a sequence of functions, each taking only one argument. 
+//This allows you to create new functions by partially applying the original function with 
+//some of its arguments.
 
 // two ways we can curry our functions  with
 // 1)--> Bind Method

@@ -1,6 +1,8 @@
 // polyfill is short of browser call back for bind function
-// Polyfill is a way to modify or add new functions. It is basically a piece of code to add/modify
-// the new functions. It is used to provide modern functionality to web browsers.
+// In JavaScript, a polyfill is a piece of code (usually a JavaScript function or object) 
+// that provides the functionality of a feature or API that is not natively supported by a web 
+// browser or an older version of a browser. It allows developers to use modern JavaScript features 
+// or APIs while ensuring backward compatibility with older environments.
 
 const user = {
   name: "Hari",

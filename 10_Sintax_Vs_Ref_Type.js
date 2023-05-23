@@ -1,4 +1,4 @@
-// Reference Error --> Not pointig to that vaible
+// Reference Error --> Not pointig to that varible
 //Example
 console.log(a);
 let a = 10;

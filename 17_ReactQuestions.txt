@@ -2,7 +2,7 @@
 ReactJS or React is a client side UI library developed JavaScript and maintained by Facebook.
 
 React JS was created by Jordan Walke, a software engineer at Facebook and open sourced
-to the world by Facebook and Instagram.s
+to the world by Facebook and Instagrams
 
 React helps in creating interactive rich web application with multiple reusable components,
 handling data in an efficient manner and maintaining data flow in single direction which helps
@@ -67,25 +67,6 @@ class MyComponent extends Component {
 }
 ```
 
-Using Hooks:
-```jsx
-import React, { useEffect } from 'react';
-
-const MyComponent = () => {
-  useEffect(() => {
-    console.log('Component mounted');
-    return () => {
-      console.log('Component will unmount');
-    };
-  }, []);
-
-  useEffect(() => {
-    console.log('Component updated');
-  });
-
-  return <div>Hello, React!</div>;
-};
-```
 "Mounting Phase"
 In React, "mounting" refers to the process of creating an instance of a component and inserting 
 it into the DOM (Document Object Model). It occurs when a new component is added to the application,
@@ -227,6 +208,26 @@ whereas lifecycle methods are still relevant for class components or when workin
 versions of React. Hooks have become the recommended way to manage state and lifecycle in 
 functional components.
 
+Using Hooks:
+```jsx
+import React, { useEffect } from 'react';
+
+const MyComponent = () => {
+  useEffect(() => {
+    console.log('Component mounted');
+    return () => {
+      console.log('Component will unmount');
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log('Component updated');
+  });
+
+  return <div>Hello, React!</div>;
+};
+```
+
 
 3) What is unidirectional data flow in React JS?
 Unidirectional data flow is a fundamental principle in React that describes 
@@ -294,8 +295,7 @@ to optimize rendering.
 
 5) What is HOC Higher Order components? Any Use Cases?
 A Higher-Order Component (HOC) in React is a function that takes a component and returns 
-a new enhanced component. HOCs are used to share code, logic, or behavior between multiple components. 
-They are a way to reuse component logic without repeating it in multiple places.
+a new enhanced component.
 
 Here are some use cases for Higher-Order Components:
 
@@ -336,24 +336,6 @@ the behavior of React components, promoting code reusability and separation of c
 In React, mounting refers to the process of creating an instance of a component and inserting
 it into the DOM (Document Object Model), making it visible and interactive in the user interface.
 
-During the mounting phase, React executes several steps:
-
-1. **Constructor**: The component's constructor function is called, where initial state and
-    component bindings can be set up.
-
-2. **Static Methods**: Any static methods defined in the component are invoked. These methods
-   are typically used for things like setting default props or initializing component-wide variables.
-
-3. **ComponentWillMount (deprecated)**: This lifecycle method, if present, is invoked before the
-   component is rendered for the first time. However, it is now considered legacy and discouraged from use.
-
-4. **Render**: The component's render method is called, returning a JSX representation of the 
-   component's UI.
-
-5. **ComponentDidMount**: This lifecycle method is called immediately after the component is 
-   rendered for the first time. It is commonly used to initiate API calls, set up event listeners,
-   or perform other actions requiring access to the DOM.
-
 The key difference between mounting and rendering is that mounting refers to the entire process
 of creating an instance of a component and inserting it into the DOM, while rendering
 specifically refers to the step of generating the JSX representation of the component's UI.
@@ -368,6 +350,7 @@ In summary, mounting is the initial process of creating and inserting a componen
 while rendering happens during both the mounting phase and subsequent updates to the component.
 
 7)How to optimize React Application any Example?.
+
 Optimizing a React application involves various techniques to improve its performance, responsiveness,
 and user experience. Here are a few examples of optimization techniques you can apply:
 
@@ -417,6 +400,7 @@ performance to identify the areas that require optimization and then apply the r
 techniques accordingly.
 
 8)How to pass data from child to parent in react?
+
 In React, data is typically passed from a child component to a parent component through the use of 
 callback functions. The parent component defines a callback function and passes it as a prop to
 the child component. The child component can then invoke the callback function and pass 
@@ -526,7 +510,10 @@ axios.get('https://api.example.com/data')
   });
 ```
 
-3. XMLHttpRequest: The XMLHttpRequest object is a traditional way of making AJAX (Asynchronous JavaScript and XML) requests. It is supported in all modern browsers and provides lower-level control over the request process compared to Fetch API or Axios.
+3. XMLHttpRequest: The XMLHttpRequest object is a traditional way of making AJAX 
+(Asynchronous JavaScript and XML) requests. 
+It is supported in all modern browsers and provides lower-level control over the request 
+process compared to Fetch API or Axios.
 
 Example usage:
 
@@ -584,6 +571,7 @@ and your project has no specific requirements that Axios fulfills, using the Fet
 good choice.
 
 10) What is React Context API?
+
 React Context API is a feature introduced in React version 16.3 as a way to manage state 
 and share data between components without explicitly passing props through each level of the
 component tree. It provides a mechanism for creating a global state that can be accessed by
@@ -1590,6 +1578,62 @@ The Flux pattern promotes a structured and predictable approach to managing stat
  with its declarative component-based approach, is often used together with 
  Flux to create efficient and manageable user interfaces.
 
+
+-------------------------------------------------------------
+useMemo
+In React, the `useMemo` hook is used to memoize the result of a function or computation, preventing unnecessary re-computation of the value. It allows you to optimize the performance of your components by caching expensive calculations or complex operations.
+
+The `useMemo` hook takes two arguments: a function and a dependency array. The function passed to `useMemo` is called the "memoized function," and it calculates the value that needs to be memoized. The dependency array is an optional argument that specifies the dependencies for the memoized value.
+
+The basic syntax of `useMemo` is as follows:
+
+```jsx
+const memoizedValue = useMemo(() => {
+  // perform expensive calculations or complex operations
+  // and return the computed value
+  return computedValue;
+}, [dependency1, dependency2, ...]);
+```
+
+Here's how `useMemo` works:
+
+1. When a component renders, the memoized function inside `useMemo` is called.
+2. The function computes the value based on the provided logic.
+3. The computed value is returned and stored in the `memoizedValue` variable.
+4. On subsequent renders, if the dependencies specified in the dependency array haven't changed, React reuses the previously computed value stored in `memoizedValue`, avoiding unnecessary re-computation.
+5. If any of the dependencies in the array change, React re-executes the memoized function, recomputes the value, and updates `memoizedValue`.
+
+The key benefit of `useMemo` is that it allows you to optimize performance by avoiding redundant calculations. It is particularly useful when dealing with computationally expensive operations, such as complex data transformations or heavy computations, and when the result of the computation remains the same unless the dependencies change.
+
+However, it's important to note that `useMemo` should be used judiciously. Memoizing every value can lead to unnecessary complexity and decreased code readability. It's recommended to apply it selectively to parts of your component that truly benefit from memoization.
+
+------------------------------------------------------
+useCallBack
+In React, the `useCallback` hook is used to memoize functions and prevent unnecessary re-creation of function instances. It is particularly useful when passing callbacks to child components, as it helps optimize performance by avoiding unnecessary re-renders.
+
+The `useCallback` hook takes two arguments: a function and a dependency array. The function passed to `useCallback` is the "memoized function," which will only be re-created if any of the dependencies in the dependency array change.
+
+The basic syntax of `useCallback` is as follows:
+
+```jsx
+const memoizedCallback = useCallback(() => {
+  // function logic
+}, [dependency1, dependency2, ...]);
+```
+
+Here's how `useCallback` works:
+
+1. When a component renders, the memoized function inside `useCallback` is created.
+2. The memoized function is stored in the `memoizedCallback` variable.
+3. On subsequent renders, if none of the dependencies specified in the dependency array have changed, React reuses the previously created memoized function.
+4. If any of the dependencies in the array change, React re-creates the memoized function.
+
+The primary benefit of `useCallback` is that it helps optimize performance in scenarios where passing functions as props to child components. By memoizing the function, you ensure that the child components do not re-render unnecessarily if the function reference remains the same.
+
+Without `useCallback`, a new function instance is created on every render, which can lead to unnecessary re-renders of child components. `useCallback` allows you to specify the dependencies that are used by the function and trigger a re-creation only when necessary.
+
+It's important to note that you should use `useCallback` judiciously and only when optimization is necessary. Not all functions need to be memoized, and memoizing every function can lead to code complexity and decreased readability. Use `useCallback` when passing callbacks to child components or when you have expensive calculations within a function that you want to avoid re-running on every render.
+---------------------------------------------------------------
 
 
 

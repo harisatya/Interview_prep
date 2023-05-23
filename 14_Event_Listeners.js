@@ -1,6 +1,6 @@
 "Important Event Listener in JavaScript 🔥";
-// In JavaScript, an event listener is a function that is attached to an HTML element and
-// is triggered when a particular event occurs, such as a click, mouseover, or keypress
+// In JavaScript, an event listener is a function that is attached to an HTML element with javaScript methods
+//and is triggered when a particular event occurs, such as a click, mouseover, or keypress
 // event. Event listeners are used to add interactivity to web pages and enable them to respond to
 // user actions.
 
