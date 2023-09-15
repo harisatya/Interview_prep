@@ -1,0 +1,6 @@
+1) What is <!Doctype html> in Html5
+The <!DOCTYPE html> declaration is an important element in HTML5 (Hypertext Markup Language, version 5) 
+that specifies the document type and version of HTML being used in a web page. 
+It is not an HTML tag but rather a document type declaration that informs the browser 
+about the type of markup language used in the document.
+

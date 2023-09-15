@@ -26,3 +26,52 @@ Function.prototype.myBind = function (...args) {
 };
 const printUserBind2 = printUser.myBind(user, 24, "chess");
 printUserBind2();
+
+// *** PolyFill for Map Method
+Array.prototype.mymap = function (cb) {
+  let temp = [];
+  for (let i = 0; i < this.length; i++) {
+    temp.push(cb(this[i]));
+  }
+  return temp;
+};
+const arr = [2, 3, 4, 5];
+const result = arr.mymap((num) => {
+  return num * 5;
+});
+console.log("result", result);
+
+// **** ployFill for filter Method
+
+Array.prototype.myFilter = function (cb) {
+  let temp = [];
+  for (let i = 0; i < this.length; i++) {
+    if (cb(this[i], i, this)) {
+      temp.push(cb(this[i]));
+    }
+  }
+  return temp;
+};
+const arr1 = [2, 3, 4, 5];
+console.log("arr1", arr1);
+const data = arr1.filter((num) => {
+  return num > 2;
+});
+console.log("resultnumber", data);
+
+// **** ployFill for Reduce Method
+//Wrong Answer need to check
+Array.prototype.myReducer = function (cb, initialValue) {
+  let accumulator = initialValue;
+  for (let i = 0; i < this.length; i++) {
+    accumulator = accumulator ? cb(this[i], i, this) : this[i];
+  }
+  return accumulator;
+};
+const arr3 = [2, 3, 4, 5];
+const sumOfArray = arr3.myReducer((accu, curr, index, arr) => {
+  console.log(accu, curr );
+  return (accu += curr);
+}, 0);
+console.log("polyfil", sumOfArray);
+  

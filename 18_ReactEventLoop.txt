@@ -1,0 +1,41 @@
+Javascript Event loop:
+
+1. Interviewer: What is the Call Stack?
+Priya: The call stack is a data structure that keeps track of the functions being executed in
+a LIFO (Last-In-First-Out) manner, ensuring the order of execution and managing function calls.
+
+2. Interviewer: What is the Task Queue (Callback Queue)?
+Priya: The task queue holds callbacks and tasks scheduled to be executed after the current 
+execution stack is empty, allowing asynchronous operations to be processed in a specific order.
+
+3. Interviewer: What are Microtasks and Macrotasks?
+Priya: Microtasks (such as Promise callbacks) have higher priority and are executed before the 
+next rendering, while macrotasks (like setTimeout or DOM events) have lower priority and are
+executed in subsequent event loop iterations.
+
+4. Interviewer: How does the event loop prioritize tasks?
+Priya: The event loop prioritizes emptying the microtask queue before processing macrotasks,
+ensuring that immediate promises and related callbacks are executed before less time-sensitive tasks.
+
+5. Interviewer: What is the role of the setTimeout function?
+Priya: The setTimeout function schedules a callback to be added to the macrotask queue after a
+specified delay, allowing delayed execution of code.
+
+6. Interviewer: How does the event loop prevent blocking?
+Priya: JavaScript's event loop enables non-blocking behavior by delegating I/O operations and
+asynchronous tasks to browser APIs and handling their results in the task queue without freezing
+the main thread.
+
+7. Interviewer: Can the event loop handle heavy computation?
+Priya: No, heavy computations in the main thread can block the event loop, leading to unresponsiveness.
+Web Workers can be employed to offload intensive tasks to separate threads without affecting the
+main event loop.
+
+8. Interviewer: What is the event loop in JavaScript?
+Priya: The event loop is a core mechanism that manages the execution of asynchronous code, 
+handling tasks like callbacks and promises to ensure non-blocking behavior.
+
+9. Interviewer: How does the event loop work?
+Priya: The event loop continuously checks the call stack and task queue, moving tasks from the 
+queue to the stack for execution, allowing JavaScript to handle asynchronous operations while 
+remaining single-threaded.
