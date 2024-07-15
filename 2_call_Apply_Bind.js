@@ -28,7 +28,7 @@ const user2 = {
 };
 // Always this will be refered to first parameter we pass
 printUserObj.call(user2, 24, "Hyd");
-printUserObj.call(user, 25, "Bangore");
+printUserObj.call(user, 25, "Banglore");
 //  only diffrence between call and apply is
 //  in call we pass other argumennts in series while in apply we pass as array
 printUserObj.apply(user, [24, "Hyd"]);
@@ -38,4 +38,3 @@ printUserObj.apply(user, [24, "Hyd"]);
 //object and returns a function which can be invoked later
 const printUser = printUserObj.bind(user, 25, "Karnataka");
 console.log(printUser);
-
